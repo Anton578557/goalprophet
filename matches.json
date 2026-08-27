@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "home_team": "Manchester City",
+        "away_team": "Arsenal",
+        "start_time": "2026-09-15T19:30:00Z",
+        "price": 25,
+        "result": null
+    },
+    {
+        "id": 2,
+        "home_team": "Real Madrid",
+        "away_team": "Barcelona",
+        "start_time": "2026-09-16T21:00:00Z",
+        "price": 25,
+        "result": null
+    },
+    {
+        "id": 3,
+        "home_team": "Liverpool",
+        "away_team": "Chelsea",
+        "start_time": "2026-09-17T17:00:00Z",
+        "price": 25,
+        "result": null
+    },
+    {
+        "id": 4,
+        "home_team": "Bayern Munich",
+        "away_team": "Borussia Dortmund",
+        "start_time": "2026-09-18T19:30:00Z",
+        "price": 25,
+        "result": null
+    }
+]

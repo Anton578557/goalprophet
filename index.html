@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    
+    <!-- SEO -->
+    <meta name="description" content="GoalProphet — Premium football predictions. 18+ only. Professional analysts, 85% win rate. Write to us to get predictions.">
+    <meta name="keywords" content="soccer predictions, football tips, goalprophet, premium football predictions">
+    <meta name="author" content="GoalProphet">
+    <meta property="og:title" content="GoalProphet — Premium Football Predictions">
+    <meta property="og:description" content="Professional football predictions with 85%+ win rate. 18+ only. Contact us via email.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' fill='%230a0a0a' stroke='%23d4af37' stroke-width='2'/><path d='M12 7L13.5 10.5L17 12L13.5 13.5L12 17L10.5 13.5L7 12L10.5 10.5L12 7Z' fill='%23d4af37'/></svg>">
+    
+    <title>GoalProphet — Premium Football Predictions</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="#d4af37" stroke-width="2"/>
+                    <path d="M12 7L13.5 10.5L17 12L13.5 13.5L12 17L10.5 13.5L7 12L10.5 10.5L12 7Z" fill="#d4af37"/>
+                </svg>
+                GOAL<span>PROPHET</span>
+                <span class="age-badge">18+</span>
+            </a>
+            <nav class="nav">
+                <a href="#" data-tab="home" class="active">Home</a>
+                <a href="#" data-tab="predictions">Predictions</a>
+                <a href="#" data-tab="how">How It Works</a>
+                <a href="#" data-tab="faq">FAQ</a>
+                <a href="#" data-tab="contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- HOME TAB -->
+        <section id="tab-home" class="tab-content active">
+            <div class="container home-container">
+                <div class="home-header">
+                    <div class="hero-badge">🔥 Premium Football Predictions</div>
+                    <h1>Win More with <span class="highlight">Elite Soccer Tips</span></h1>
+                    <p class="hero-sub">Professional analysis for football matches. Pay per match via email, no subscriptions. Success rate over 85%. 18+ only.</p>
+                </div>
+
+                <!-- Ближайшие 2 матча -->
+                <div class="upcoming-matches" id="upcomingMatches"></div>
+
+                <!-- Статистика -->
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">Win Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">+1420%</div>
+                        <div class="stat-label">Profit (12 months)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.8K</div>
+                        <div class="stat-label">Active Members</div>
+                    </div>
+                </div>
+
+                <!-- Блок "Latest Winners" -->
+                <div class="latest-winners">
+                    <h3>🔥 Recent Purchases</h3>
+                    <div id="winnersList"></div>
+                </div>
+
+                <!-- About Us -->
+                <div class="about-section">
+                    <h2>Why Choose GoalProphet</h2>
+                    <p class="about-text">
+                        We are a large team of professional football analysts, mathematicians and former bookmakers with over 10 years of combined experience in the betting industry. We work around the clock to bring you the most accurate predictions. Our approach combines advanced statistical models, deep match analysis, exclusive insider information and a proven track record. We don’t just guess — we calculate. Every prediction is a result of our team’s effort, and we are dedicated to helping you succeed.
+                    </p>
+                    <p class="about-text">
+                        <strong>We combine human expertise with cutting-edge artificial intelligence.</strong>  
+                        Our team uses AI-powered models that analyze <strong>millions of data points</strong> from historical matches, player performance, team tactics, weather conditions, and real-time odds.  
+                        This allows us to generate predictions that are <strong>not just intuitive, but statistically proven</strong>.
+                    </p>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <span class="feature-icon">📊</span>
+                            <h3>Advanced Analytics</h3>
+                            <p>Mathematical models and deep statistical analysis</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🤖</span>
+                            <h3>AI-Powered Insights</h3>
+                            <p>Machine learning models analyzing millions of data points</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📈</span>
+                            <h3>85% Win Rate</h3>
+                            <p>Proven results over the last 12 months</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How It Works (кратко) -->
+                <div class="how-it-works">
+                    <h2>How It Works</h2>
+                    <div class="steps-grid">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <h3>Choose a Match</h3>
+                            <p>Browse upcoming football matches with expert analysis</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <h3>Email Us</h3>
+                            <p>Click "Request Prediction" — your email client opens</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <h3>Get Prediction</h3>
+                            <p>We reply with payment details and send your prediction</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-primary" data-tab-link="how">More Details</a>
+                </div>
+
+                <!-- Отзывы -->
+                <div class="testimonials">
+                    <h2>What Our Clients Say</h2>
+                    <p class="section-subtitle">Over 4,800 happy members — here's what they think.</p>
+                    <div class="testimonials-grid" id="testimonialsGrid"></div>
+                </div>
+
+                <!-- CTA buttons -->
+                <div class="cta-buttons">
+                    <a href="#" class="btn-primary" data-tab-link="predictions">View All Predictions</a>
+                    <a href="#" class="btn-secondary" data-tab-link="faq">Read FAQ</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PREDICTIONS TAB -->
+        <section id="tab-predictions" class="tab-content">
+            <div class="container">
+                <h2 class="section-title">Available Matches</h2>
+                <p class="section-subtitle">Select a match and write to us on email to get the prediction. Price: $25 per match. 18+ only.</p>
+                <div id="predictionsList" class="predictions-list"></div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS TAB -->
+        <section id="tab-how" class="tab-content">
+            <div class="container how-container">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Follow these simple steps to get your predictions.</p>
+                <div class="full-steps">
+                    <div class="step-full">
+                        <h3>Step 1: Choose a match</h3>
+                        <p>Browse our Predictions tab and find the football match you’re interested in.</p>
+                    </div>
+                    <div class="step-full">
+                        <h3>Step 2: Contact us via email</h3>
+                        <p>Click the "Request Prediction" button. It will open your email client with a pre-filled message. Send it to <a href="mailto:alvaradorous5268546@outlook.com">alvaradorous5268546@outlook.com</a>.</p>
+                    </div>
+                    <div class="step-full">
+                        <h3>Step 3: Receive payment details</h3>
+                        <p>We will reply with instructions on how to pay ($25). We accept cryptocurrency (BTC, ETH, USDT) and bank cards.</p>
+                    </div>
+                    <div class="step-full">
+                        <h3>Step 4: Get your prediction</h3>
+                        <p>Once payment is confirmed, we send you the prediction for the match directly to your email.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ TAB -->
+        <section id="tab-faq" class="tab-content">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>How do I get a prediction?</h3>
+                        <p>Write to us at <a href="mailto:alvaradorous5268546@outlook.com">alvaradorous5268546@outlook.com</a> mentioning the match you want. We will reply with payment details and send the prediction.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What payment methods do you accept?</h3>
+                        <p>We accept cryptocurrency (BTC, ETH, USDT) and bank cards. Payment details are provided via email.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>When does the sale close?</h3>
+                        <p>Sales for each match close 10 minutes before kick-off. Make sure to contact us in advance.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What if the match is postponed?</h3>
+                        <p>You will receive a full refund or a replacement prediction for another match.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is this site for adults only?</h3>
+                        <p>Yes, GoalProphet is intended for users aged 18 and above. By using our service, you confirm that you are at least 18 years old.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT TAB -->
+        <section id="tab-contact" class="tab-content">
+            <div class="container contact-container">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">We are here to help. Reach us anytime via email.</p>
+                <div class="contact-buttons">
+                    <a href="mailto:alvaradorous5268546@outlook.com" class="btn-primary">Email Us</a>
+                </div>
+                <div class="contact-info">
+                    <p>📧 <a href="mailto:alvaradorous5268546@outlook.com">alvaradorous5268546@outlook.com</a></p>
+                    <p>⏰ Average response time: <strong>within 24 hours</strong></p>
+                    <p>🔞 <strong>18+ only</strong></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 GoalProphet. All rights reserved.</p>
+            <p class="age-footer">🔞 <strong>18+</strong> — This website is intended for users aged 18 and above.</p>
+            <p class="updated">Last updated: <span id="lastUpdated"></span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

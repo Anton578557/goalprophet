@@ -1,34 +1,74 @@
 [
     {
         "id": 1,
-        "home_team": "Manchester City",
-        "away_team": "Arsenal",
-        "start_time": "2026-09-15T19:30:00Z",
+        "home_team": "Genk",
+        "away_team": "SK Beveren",
+        "start_time": "2026-08-29T02:45:00Z",
         "price": 25,
-        "result": null
+        "result": null,
+        "league": "Belgian Pro League"
     },
     {
         "id": 2,
-        "home_team": "Real Madrid",
-        "away_team": "Barcelona",
-        "start_time": "2026-09-16T21:00:00Z",
+        "home_team": "Horsens",
+        "away_team": "Viborg",
+        "start_time": "2026-08-29T01:00:00Z",
         "price": 25,
-        "result": null
+        "result": null,
+        "league": "Danish Superliga"
     },
     {
         "id": 3,
-        "home_team": "Liverpool",
-        "away_team": "Chelsea",
-        "start_time": "2026-09-17T17:00:00Z",
+        "home_team": "Arsenal",
+        "away_team": "Coventry City",
+        "start_time": "2026-08-22T02:00:00Z",
         "price": 25,
-        "result": null
+        "result": null,
+        "league": "Premier League"
     },
     {
         "id": 4,
-        "home_team": "Bayern Munich",
-        "away_team": "Borussia Dortmund",
-        "start_time": "2026-09-18T19:30:00Z",
+        "home_team": "Kortrijk",
+        "away_team": "Charleroi",
+        "start_time": "2026-08-30T00:15:00Z",
         "price": 25,
-        "result": null
+        "result": null,
+        "league": "Belgian Pro League"
+    },
+    {
+        "id": 5,
+        "home_team": "Lyngby",
+        "away_team": "OB (Odense)",
+        "start_time": "2026-08-30T20:00:00Z",
+        "price": 25,
+        "result": null,
+        "league": "Danish Superliga"
+    },
+    {
+        "id": 6,
+        "home_team": "Hull City",
+        "away_team": "Manchester United",
+        "start_time": "2026-08-22T18:30:00Z",
+        "price": 25,
+        "result": null,
+        "league": "Premier League"
+    },
+    {
+        "id": 7,
+        "home_team": "Silkeborg",
+        "away_team": "Midtjylland",
+        "start_time": "2026-08-30T20:00:00Z",
+        "price": 25,
+        "result": null,
+        "league": "Danish Superliga"
+    },
+    {
+        "id": 8,
+        "home_team": "Alaves",
+        "away_team": "Getafe",
+        "start_time": "2026-08-22T20:00:00Z",
+        "price": 25,
+        "result": null,
+        "league": "La Liga"
     }
 ]

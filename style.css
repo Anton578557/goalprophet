@@ -48,7 +48,7 @@ h1, h2, h3, h4 {
     margin-bottom: 20px;
 }
 
-/* Header */
+/* ===== HEADER ===== */
 .header {
     position: sticky;
     top: 0;
@@ -116,7 +116,7 @@ h1, h2, h3, h4 {
     background: rgba(212, 175, 55, 0.1);
 }
 
-/* Main content */
+/* ===== MAIN CONTENT ===== */
 .main-content {
     flex: 1;
     padding: 30px 0;
@@ -135,7 +135,7 @@ h1, h2, h3, h4 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Home */
+/* ===== HOME ===== */
 .home-container {
     display: flex;
     flex-direction: column;
@@ -176,7 +176,7 @@ h1, h2, h3, h4 {
     margin: 0 auto;
 }
 
-/* ===== Блок вопросов (6 ячеек) ===== */
+/* ===== QUICK QUESTIONS ===== */
 .quick-questions {
     max-width: 1000px;
     width: 100%;
@@ -220,7 +220,7 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 
-/* Stats */
+/* ===== STATS ===== */
 .stats-grid {
     display: flex;
     gap: 20px;
@@ -250,29 +250,31 @@ h1, h2, h3, h4 {
     letter-spacing: 1px;
 }
 
-/* Latest Winners */
+/* ===== LATEST WINNERS (увеличенный) ===== */
 .latest-winners {
-    max-width: 500px;
+    max-width: 700px;
     width: 100%;
-    background: rgba(18, 18, 18, 0.9);
-    border: 1px solid var(--accent-dark);
-    border-radius: 16px;
-    padding: 20px;
+    background: rgba(18, 18, 18, 0.95);
+    border: 2px solid var(--accent);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: var(--shadow-gold);
     text-align: left;
 }
 .latest-winners h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 22px;
+    margin-bottom: 20px;
     text-align: center;
     color: var(--accent);
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
 }
 .winner-item {
     display: flex;
     justify-content: space-between;
-    padding: 8px 0;
+    align-items: center;
+    padding: 12px 0;
     border-bottom: 1px solid var(--border);
-    font-size: 14px;
+    font-size: 15px;
 }
 .winner-item:last-child {
     border-bottom: none;
@@ -280,12 +282,14 @@ h1, h2, h3, h4 {
 .winner-item .winner-name {
     color: var(--accent);
     font-weight: 700;
+    font-size: 15px;
 }
 .winner-item .winner-match {
     color: var(--text-muted);
+    font-size: 14px;
 }
 
-/* About */
+/* ===== ABOUT ===== */
 .about-section {
     max-width: 850px;
     background: rgba(18, 18, 18, 0.9);
@@ -333,7 +337,7 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
 }
 
-/* How it works (home) */
+/* ===== HOW IT WORKS ===== */
 .how-it-works {
     max-width: 850px;
     background: rgba(18, 18, 18, 0.9);
@@ -383,7 +387,7 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
 }
 
-/* Testimonials */
+/* ===== TESTIMONIALS ===== */
 .testimonials {
     max-width: 1100px;
     width: 100%;
@@ -448,7 +452,7 @@ h1, h2, h3, h4 {
     margin-bottom: 5px;
 }
 
-/* CTA buttons */
+/* ===== CTA BUTTONS ===== */
 .cta-buttons {
     display: flex;
     gap: 15px;
@@ -479,7 +483,7 @@ h1, h2, h3, h4 {
     color: var(--accent);
 }
 
-/* Predictions */
+/* ===== PREDICTIONS ===== */
 .section-title {
     font-size: 32px;
     margin-bottom: 10px;
@@ -544,7 +548,34 @@ h1, h2, h3, h4 {
     pointer-events: none;
 }
 
-/* FAQ */
+/* ===== HOW IT WORKS FULL ===== */
+.how-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.full-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.step-full {
+    background: rgba(18, 18, 18, 0.9);
+    border: 1px solid var(--accent-dark);
+    border-radius: 16px;
+    padding: 24px;
+}
+.step-full h3 {
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+.step-full p {
+    color: var(--text-muted);
+}
+.step-full a {
+    color: var(--accent);
+}
+
+/* ===== FAQ ===== */
 .faq-list {
     max-width: 700px;
     margin: 0 auto;
@@ -571,7 +602,7 @@ h1, h2, h3, h4 {
     color: var(--accent);
 }
 
-/* Contact */
+/* ===== CONTACT ===== */
 .contact-container {
     text-align: center;
 }
@@ -594,7 +625,7 @@ h1, h2, h3, h4 {
     text-decoration: none;
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 .footer {
     background: rgba(10, 10, 10, 0.95);
     border-top: 1px solid var(--accent-dark);
@@ -613,7 +644,7 @@ h1, h2, h3, h4 {
     font-size: 11px;
 }
 
-/* Responsive */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .home-header h1 { font-size: 32px; }
     .stats-grid { flex-direction: column; }
@@ -623,4 +654,5 @@ h1, h2, h3, h4 {
     .nav a { font-size: 12px; padding: 4px 8px; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .questions-grid { grid-template-columns: 1fr; }
+    .latest-winners { max-width: 100%; }
 }

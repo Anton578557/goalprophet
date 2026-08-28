@@ -16,6 +16,16 @@ const winnersMatches = [
 ];
 let winnersList = [];
 
+// ===== 6 вопросов для главной =====
+const quickQuestions = [
+    { icon: '❓', text: 'How do I get a prediction?' },
+    { icon: '💰', text: 'What payment methods do you accept?' },
+    { icon: '⏰', text: 'When does the sale close?' },
+    { icon: '🔁', text: 'What if the match is postponed?' },
+    { icon: '🔞', text: 'Is this site for adults only?' },
+    { icon: '📊', text: 'Do you use AI for predictions?' }
+];
+
 // ===== 100 отзывов =====
 const testimonialsData = [
     { name: 'Dmitry K.', role: 'VIP member', text: 'I’ve been using GoalProphet for 3 months. The predictions are spot-on. The team truly knows football.', rating: 5, date: '2 days ago' },
@@ -124,10 +134,15 @@ async function loadMatches() {
     try {
         const response = await fetch('matches.json');
         matchesData = await response.json();
+        
+        // Генерируем рандомное время для матчей (до выходных)
+        assignRandomTimes();
+        
         renderMatches();
         setInterval(renderMatches, 1000);
         startWinnersNotifications();
         renderTestimonials();
+        renderQuickQuestions();
         setLastUpdated();
     } catch (error) {
         console.error('Error loading matches.json:', error);
@@ -135,37 +150,35 @@ async function loadMatches() {
     }
 }
 
+// ===== Генерация случайного времени до выходных =====
+function assignRandomTimes() {
+    const now = new Date();
+    const dayOfWeek = now.getDay(); // 0 = Sunday, 6 = Saturday
+    
+    // До ближайшей субботы (выходные)
+    let daysUntilWeekend = (6 - dayOfWeek + 7) % 7;
+    if (daysUntilWeekend === 0) daysUntilWeekend = 1; // Если сегодня суббота, минимум 1 день
+    
+    matchesData.forEach((match, index) => {
+        // Случайное время: от 1 до 3 дней
+        const randomDays = Math.floor(Math.random() * (daysUntilWeekend - 0 + 1)) + 1;
+        const randomHour = Math.floor(Math.random() * 10) + 12; // 12:00 - 21:59
+        const randomMinute = Math.floor(Math.random() * 60);
+        
+        const matchDate = new Date(now);
+        matchDate.setDate(now.getDate() + randomDays);
+        matchDate.setHours(randomHour, randomMinute, 0, 0);
+        
+        match.start_time = matchDate.toISOString();
+    });
+}
+
 // ===== Рендер всех матчей =====
 function renderMatches() {
     const now = new Date();
     const upcoming = matchesData.filter(m => new Date(m.start_time) > now && !m.result);
 
-    const homeContainer = document.getElementById('upcomingMatches');
-    if (upcoming.length > 0) {
-        homeContainer.innerHTML = upcoming.slice(0, 2).map(match => {
-            const timer = getTimer(match.start_time);
-            return `
-                <div class="match-card">
-                    <div class="match-teams">${match.home_team} vs ${match.away_team}</div>
-                    <div class="match-time">${formatDate(match.start_time)}</div>
-                    <div class="match-price">$${match.price}</div>
-                    <div class="crypto-icons">
-                        <span title="Bitcoin">₿</span>
-                        <span title="Ethereum">Ξ</span>
-                        <span title="Tether">₮</span>
-                    </div>
-                    ${timer ? `<div class="timer ${timer.urgent ? 'urgent' : ''}">⏰ ${timer.text}</div>` : ''}
-                    <a href="mailto:${CONTACT_EMAIL}?subject=Prediction%20Request%20-%20${match.home_team}%20vs%20${match.away_team}&body=Hello%21%20I%20want%20to%20purchase%20a%20prediction%20for%20${match.home_team}%20vs%20${match.away_team}.%20Please%20send%20payment%20details." 
-                       class="btn-request ${isClosed(match.start_time) ? 'disabled' : ''}" ${isClosed(match.start_time) ? 'disabled' : ''}>
-                        ${isClosed(match.start_time) ? 'Closed' : 'Request Prediction'}
-                    </a>
-                </div>
-            `;
-        }).join('');
-    } else {
-        homeContainer.innerHTML = '<p>No upcoming matches.</p>';
-    }
-
+    // В Predictions показываем все матчи
     const predictionsList = document.getElementById('predictionsList');
     if (upcoming.length > 0) {
         predictionsList.innerHTML = upcoming.map(match => {
@@ -193,6 +206,19 @@ function renderMatches() {
         }).join('');
     } else {
         predictionsList.innerHTML = '<p>No upcoming matches at the moment.</p>';
+    }
+}
+
+// ===== Рендер вопросов на главной =====
+function renderQuickQuestions() {
+    const container = document.getElementById('quickQuestions');
+    if (container) {
+        container.innerHTML = quickQuestions.map(q => `
+            <a href="#" class="question-card" data-tab-link="faq">
+                <span class="question-icon">${q.icon}</span>
+                <span class="question-text">${q.text}</span>
+            </a>
+        `).join('');
     }
 }
 

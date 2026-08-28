@@ -430,7 +430,7 @@ h1, h2, h3, h4 {
     padding-bottom: 2px;
 }
 
-/* Email link (золотой, без синего) */
+/* Email link */
 .email-link {
     color: var(--accent);
     text-decoration: none;

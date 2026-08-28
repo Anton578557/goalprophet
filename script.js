@@ -5,15 +5,22 @@ const CONTACT_EMAIL = 'alvaradorous5268546@outlook.com';
 let matchesData = [];
 
 // ===== Имитация последних покупок =====
-const winnersNames = ['Dmitry K.', 'Alexey V.', 'Sergey M.', 'Ivan P.', 'Mikhail S.', 'Andrey L.'];
-const winnersMatches = [
-    'Man City vs Arsenal',
-    'Real Madrid vs Barcelona',
-    'Liverpool vs Chelsea',
-    'Bayern vs Dortmund',
-    'PSG vs Marseille',
-    'Inter vs Juventus'
+// Интернациональные имена со всего мира
+const winnersNames = [
+    // Европа
+    'Lukas M.', 'Jens W.', 'Marco R.', 'Antoine D.', 'Pierre L.', 'Sven K.', 'Oliver H.', 'Luca B.', 'Mateo F.', 'Diego G.',
+    // Северная Америка
+    'John S.', 'Michael T.', 'David B.', 'Chris P.', 'James L.', 'Ryan K.', 'Kevin M.', 'Eric J.',
+    // Южная Америка
+    'Carlos S.', 'Luis M.', 'Javier R.', 'Andres P.', 'Felipe L.', 'Thiago S.', 'Rafael C.', 'Bruno A.',
+    // Азия
+    'Takashi Y.', 'Hiroshi K.', 'Min-Jun P.', 'Ji-Ho L.', 'Rahul S.', 'Arjun P.', 'Wei C.', 'Kenji T.',
+    // Африка
+    'Kwame A.', 'Chinedu O.', 'Yusuf M.', 'Omar H.', 'Ahmed S.', 'Moussa D.',
+    // Австралия/Океания
+    'Jack W.', 'Liam T.', 'Noah B.'
 ];
+
 let winnersList = [];
 
 // ===== 6 вопросов для главной =====
@@ -178,7 +185,7 @@ function renderMatches() {
     const now = new Date();
     const upcoming = matchesData.filter(m => new Date(m.start_time) > now && !m.result);
 
-    // В Predictions показываем все матчи
+    // Predictions - все предстоящие матчи
     const predictionsList = document.getElementById('predictionsList');
     if (upcoming.length > 0) {
         predictionsList.innerHTML = upcoming.map(match => {
@@ -261,19 +268,31 @@ function isClosed(startTime) {
     return diffMinutes < 10;
 }
 
-// ===== Имитация уведомлений о покупках =====
+// ===== Имитация уведомлений о покупках (матчи на этой неделе) =====
 function startWinnersNotifications() {
     updateWinnersList();
-    setInterval(updateWinnersList, 8000);
+    setInterval(updateWinnersList, 8000); // каждые 8 секунд
 }
 
 function updateWinnersList() {
+    // Берём случайное имя из интернационального списка
     const randomName = winnersNames[Math.floor(Math.random() * winnersNames.length)];
-    const randomMatch = winnersMatches[Math.floor(Math.random() * winnersMatches.length)];
-    const newWinner = { name: randomName, match: randomMatch };
+    
+    // Берём случайный предстоящий матч из matchesData
+    const now = new Date();
+    const upcomingMatches = matchesData.filter(m => new Date(m.start_time) > now && !m.result);
+    
+    let matchText = 'Upcoming match';
+    if (upcomingMatches.length > 0) {
+        const randomMatch = upcomingMatches[Math.floor(Math.random() * upcomingMatches.length)];
+        matchText = `${randomMatch.home_team} vs ${randomMatch.away_team}`;
+    }
+    
+    const newWinner = { name: randomName, match: matchText };
     
     winnersList.unshift(newWinner);
-    if (winnersList.length > 5) winnersList.pop();
+    // Показываем 7-8 записей (увеличиваем размер блока)
+    if (winnersList.length > 8) winnersList.pop();
     
     const winnersContainer = document.getElementById('winnersList');
     if (winnersContainer) {

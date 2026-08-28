@@ -48,7 +48,7 @@ h1, h2, h3, h4 {
     margin-bottom: 20px;
 }
 
-/* ===== HEADER ===== */
+/* Header */
 .header {
     position: sticky;
     top: 0;
@@ -116,7 +116,7 @@ h1, h2, h3, h4 {
     background: rgba(212, 175, 55, 0.1);
 }
 
-/* ===== MAIN CONTENT ===== */
+/* Main content */
 .main-content {
     flex: 1;
     padding: 30px 0;
@@ -135,7 +135,7 @@ h1, h2, h3, h4 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== HOME ===== */
+/* Home */
 .home-container {
     display: flex;
     flex-direction: column;
@@ -176,8 +176,8 @@ h1, h2, h3, h4 {
     margin: 0 auto;
 }
 
-/* ===== QUICK QUESTIONS ===== */
-.quick-questions {
+/* ===== Hot Matches (6 карточек) ===== */
+.hot-matches {
     max-width: 1000px;
     width: 100%;
     background: rgba(18, 18, 18, 0.9);
@@ -186,13 +186,19 @@ h1, h2, h3, h4 {
     padding: 30px;
     box-shadow: var(--shadow-gold);
 }
-.questions-grid {
+.hot-matches h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--accent);
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+.hot-matches-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 15px;
-    margin-top: 15px;
 }
-.question-card {
+.hot-match-card {
     background: rgba(0, 0, 0, 0.4);
     border: 1px solid var(--accent-dark);
     border-radius: 12px;
@@ -205,22 +211,33 @@ h1, h2, h3, h4 {
     align-items: center;
     gap: 10px;
 }
-.question-card:hover {
+.hot-match-card:hover {
     border-color: var(--accent-light);
     box-shadow: var(--shadow-gold-strong);
     transform: translateY(-3px);
 }
-.question-icon {
+.hot-match-icon {
     font-size: 32px;
 }
-.question-text {
+.hot-match-title {
     color: var(--text-main);
     font-size: 15px;
     font-weight: 600;
     text-align: center;
 }
+.hot-match-league {
+    color: var(--text-muted);
+    font-size: 13px;
+    text-align: center;
+}
+.hot-match-time {
+    color: var(--accent);
+    font-size: 14px;
+    text-align: center;
+    font-weight: 700;
+}
 
-/* ===== STATS ===== */
+/* Stats */
 .stats-grid {
     display: flex;
     gap: 20px;
@@ -250,7 +267,7 @@ h1, h2, h3, h4 {
     letter-spacing: 1px;
 }
 
-/* ===== LATEST WINNERS (увеличенный) ===== */
+/* ===== Latest Winners (увеличенный) ===== */
 .latest-winners {
     max-width: 700px;
     width: 100%;
@@ -289,7 +306,7 @@ h1, h2, h3, h4 {
     font-size: 14px;
 }
 
-/* ===== ABOUT ===== */
+/* About */
 .about-section {
     max-width: 850px;
     background: rgba(18, 18, 18, 0.9);
@@ -337,7 +354,7 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
 }
 
-/* ===== HOW IT WORKS ===== */
+/* How it works (home) */
 .how-it-works {
     max-width: 850px;
     background: rgba(18, 18, 18, 0.9);
@@ -387,7 +404,55 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
 }
 
-/* ===== TESTIMONIALS ===== */
+/* ===== How It Works (полная версия) ===== */
+.how-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.full-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.step-full {
+    background: rgba(18, 18, 18, 0.9);
+    border: 1px solid var(--accent-dark);
+    border-radius: 16px;
+    padding: 24px;
+}
+.step-full h3 {
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-size: 18px;
+}
+.step-full p {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+.step-full a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+}
+
+/* ===== Email link (золотой, без синего) ===== */
+.email-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+    transition: all 0.3s;
+}
+.email-link:hover {
+    color: var(--accent-light);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Testimonials */
 .testimonials {
     max-width: 1100px;
     width: 100%;
@@ -452,7 +517,7 @@ h1, h2, h3, h4 {
     margin-bottom: 5px;
 }
 
-/* ===== CTA BUTTONS ===== */
+/* CTA buttons */
 .cta-buttons {
     display: flex;
     gap: 15px;
@@ -483,7 +548,7 @@ h1, h2, h3, h4 {
     color: var(--accent);
 }
 
-/* ===== PREDICTIONS ===== */
+/* Predictions */
 .section-title {
     font-size: 32px;
     margin-bottom: 10px;
@@ -548,34 +613,7 @@ h1, h2, h3, h4 {
     pointer-events: none;
 }
 
-/* ===== HOW IT WORKS FULL ===== */
-.how-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-.full-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.step-full {
-    background: rgba(18, 18, 18, 0.9);
-    border: 1px solid var(--accent-dark);
-    border-radius: 16px;
-    padding: 24px;
-}
-.step-full h3 {
-    margin-bottom: 10px;
-    color: var(--accent);
-}
-.step-full p {
-    color: var(--text-muted);
-}
-.step-full a {
-    color: var(--accent);
-}
-
-/* ===== FAQ ===== */
+/* FAQ */
 .faq-list {
     max-width: 700px;
     margin: 0 auto;
@@ -600,9 +638,11 @@ h1, h2, h3, h4 {
 }
 .faq-item a {
     color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
 }
 
-/* ===== CONTACT ===== */
+/* Contact */
 .contact-container {
     text-align: center;
 }
@@ -623,9 +663,10 @@ h1, h2, h3, h4 {
 .contact-info a {
     color: var(--accent);
     text-decoration: none;
+    border-bottom: 1px solid var(--accent);
 }
 
-/* ===== FOOTER ===== */
+/* Footer */
 .footer {
     background: rgba(10, 10, 10, 0.95);
     border-top: 1px solid var(--accent-dark);
@@ -644,7 +685,7 @@ h1, h2, h3, h4 {
     font-size: 11px;
 }
 
-/* ===== RESPONSIVE ===== */
+/* Responsive */
 @media (max-width: 768px) {
     .home-header h1 { font-size: 32px; }
     .stats-grid { flex-direction: column; }
@@ -653,6 +694,5 @@ h1, h2, h3, h4 {
     .nav { gap: 10px; }
     .nav a { font-size: 12px; padding: 4px 8px; }
     .testimonials-grid { grid-template-columns: 1fr; }
-    .questions-grid { grid-template-columns: 1fr; }
-    .latest-winners { max-width: 100%; }
+    .hot-matches-grid { grid-template-columns: 1fr; }
 }

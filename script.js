@@ -5,7 +5,6 @@ const CONTACT_EMAIL = 'alvaradorous5268546@outlook.com';
 let matchesData = [];
 
 // ===== Имитация последних покупок =====
-// Интернациональные имена
 const winnersNames = [
     'Lukas M.', 'Jens W.', 'Marco R.', 'Antoine D.', 'Pierre L.', 'Sven K.', 'Oliver H.', 'Luca B.', 'Mateo F.', 'Diego G.',
     'John S.', 'Michael T.', 'David B.', 'Chris P.', 'James L.', 'Ryan K.', 'Kevin M.', 'Eric J.',
@@ -17,14 +16,14 @@ const winnersNames = [
 
 let winnersList = [];
 
-// ===== 6 горячих матчей (для главной) =====
+// ===== 6 горячих матчей (актуальные) =====
 const hotMatches = [
-    { icon: '⚽', title: 'Genk vs SK Beveren', league: 'Belgian Pro League', time: 'Sat, Aug 29, 02:45' },
-    { icon: '⚽', title: 'Horsens vs Viborg', league: 'Danish Superliga', time: 'Sat, Aug 29, 01:00' },
-    { icon: '⚽', title: 'Arsenal vs Coventry City', league: 'Premier League', time: 'Sat, Aug 22, 02:00' },
-    { icon: '⚽', title: 'Kortrijk vs Charleroi', league: 'Belgian Pro League', time: 'Sun, Aug 30, 00:15' },
-    { icon: '⚽', title: 'Lyngby vs OB', league: 'Danish Superliga', time: 'Sun, Aug 30, 20:00' },
-    { icon: '⚽', title: 'Hull City vs Manchester United', league: 'Premier League', time: 'Sat, Aug 22, 18:30' }
+    { icon: '⚽', title: 'Karlsruher SC vs VfL Wolfsburg', league: '2. Bundesliga', time: 'Sat, Aug 29, 14:00' },
+    { icon: '⚽', title: 'Liverpool vs Nottingham Forest', league: 'Premier League', time: 'Sat, Aug 29, 14:30' },
+    { icon: '⚽', title: 'Juventus vs Parma', league: 'Serie A', time: 'Sat, Aug 29, 21:45' },
+    { icon: '⚽', title: 'Gent vs Club Brugge', league: 'Belgian Pro League', time: 'Sun, Aug 30, 14:30' },
+    { icon: '⚽', title: 'Nordsjaelland vs Brondby', league: 'Danish Superliga', time: 'Sun, Aug 30, 19:00' },
+    { icon: '⚽', title: 'Lillestrom vs Fredrikstad', league: 'Norwegian Eliteserien', time: 'Sun, Aug 30, 20:15' }
 ];
 
 // ===== 100 отзывов (интернациональные имена) =====
@@ -136,9 +135,6 @@ async function loadMatches() {
         const response = await fetch('matches.json');
         matchesData = await response.json();
         
-        // Генерируем рандомное время для матчей
-        assignRandomTimes();
-        
         renderMatches();
         setInterval(renderMatches, 1000);
         startWinnersNotifications();
@@ -149,27 +145,6 @@ async function loadMatches() {
         console.error('Error loading matches.json:', error);
         document.getElementById('hotMatches').innerHTML = '<p style="color:var(--text-muted)">No matches available.</p>';
     }
-}
-
-// ===== Генерация случайного времени =====
-function assignRandomTimes() {
-    const now = new Date();
-    const dayOfWeek = now.getDay();
-    
-    let daysUntilWeekend = (6 - dayOfWeek + 7) % 7;
-    if (daysUntilWeekend === 0) daysUntilWeekend = 1;
-    
-    matchesData.forEach((match, index) => {
-        const randomDays = Math.floor(Math.random() * (daysUntilWeekend - 0 + 1)) + 1;
-        const randomHour = Math.floor(Math.random() * 10) + 12;
-        const randomMinute = Math.floor(Math.random() * 60);
-        
-        const matchDate = new Date(now);
-        matchDate.setDate(now.getDate() + randomDays);
-        matchDate.setHours(randomHour, randomMinute, 0, 0);
-        
-        match.start_time = matchDate.toISOString();
-    });
 }
 
 // ===== Рендер всех матчей =====

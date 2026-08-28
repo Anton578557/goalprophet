@@ -1,5 +1,5 @@
 // ===== Конфигурация =====
-const CONTACT_EMAIL = 'alvaradorous5268546@outlook.com';
+const CONTACT_EMAIL = 'goalprophet1@outlook.com';
 
 // ===== Данные матчей =====
 let matchesData = [];
@@ -16,7 +16,7 @@ const winnersNames = [
 
 let winnersList = [];
 
-// ===== 6 горячих матчей (актуальные) =====
+// ===== 6 горячих матчей =====
 const hotMatches = [
     { icon: '⚽', title: 'Karlsruher SC vs VfL Wolfsburg', league: '2. Bundesliga', time: 'Sat, Aug 29, 14:00' },
     { icon: '⚽', title: 'Liverpool vs Nottingham Forest', league: 'Premier League', time: 'Sat, Aug 29, 14:30' },
@@ -26,7 +26,7 @@ const hotMatches = [
     { icon: '⚽', title: 'Lillestrom vs Fredrikstad', league: 'Norwegian Eliteserien', time: 'Sun, Aug 30, 20:15' }
 ];
 
-// ===== 100 отзывов (интернациональные имена) =====
+// ===== 100 отзывов =====
 const testimonialsData = [
     { name: 'Lukas M.', role: 'VIP member', text: 'I’ve been using GoalProphet for 3 months. The predictions are spot-on. The team truly knows football.', rating: 5, date: '2 days ago' },
     { name: 'Jens W.', role: 'VIP member', text: 'The best tipster team I’ve ever used. Clear communication and always profitable.', rating: 5, date: '5 days ago' },

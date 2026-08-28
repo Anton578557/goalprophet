@@ -40,14 +40,6 @@ h1, h2, h3, h4 {
     padding: 0 20px;
 }
 
-/* ===== ЗОЛОТЫЕ ЗАГОЛОВКИ ===== */
-.gold-title {
-    color: var(--accent);
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
 /* Header */
 .header {
     position: sticky;
@@ -176,7 +168,7 @@ h1, h2, h3, h4 {
     margin: 0 auto;
 }
 
-/* ===== Hot Matches (6 карточек) ===== */
+/* ===== Hot Matches ===== */
 .hot-matches {
     max-width: 1000px;
     width: 100%;
@@ -267,7 +259,7 @@ h1, h2, h3, h4 {
     letter-spacing: 1px;
 }
 
-/* ===== Latest Winners (увеличенный) ===== */
+/* Latest Winners */
 .latest-winners {
     max-width: 700px;
     width: 100%;
@@ -404,7 +396,7 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
 }
 
-/* ===== How It Works (полная версия) ===== */
+/* How It Works (полная версия) */
 .how-container {
     max-width: 800px;
     margin: 0 auto;
@@ -438,7 +430,7 @@ h1, h2, h3, h4 {
     padding-bottom: 2px;
 }
 
-/* ===== Email link (золотой, без синего) ===== */
+/* Email link (золотой, без синего) */
 .email-link {
     color: var(--accent);
     text-decoration: none;
